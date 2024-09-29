@@ -14,3 +14,7 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return Inertia::render('Contact');
 });
+
+Route::post('/logout', function () {
+    dd('Logout');
+});
