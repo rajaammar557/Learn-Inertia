@@ -1,10 +1,9 @@
 <script setup>
-import Nav from '../Shared/Nav.vue' 
+import Layout from '../Shared/Layout.vue' 
 </script>
 
 <template>
-    <div>
-        <Nav />
-        <h1>About</h1>
-    </div>
+    <Layout>
+        <h1 class="text-4xl">About</h1>
+    </Layout>
 </template>

@@ -1,5 +1,5 @@
 <script setup>
-import Nav from '../Shared/Nav.vue'
+import Layout from '../Shared/Layout.vue';
 import { Link } from '@inertiajs/vue3'
 
 defineProps({
@@ -8,19 +8,14 @@ defineProps({
 </script>
 
 <template>
-    <div>
-        <Nav />
-        <h1>Home</h1>
-        <div class="time">
-            <h2>The current time is {{ time }}</h2>
-            <Link href="/" preserve-scroll>Refresh</Link>
+    <Layout>
+        <h1 class="text-4xl">Home</h1>
+        <div class="mt-72">
+            <h2 >The current time is {{ time }}</h2>
+            <Link class="text-blue-500 hover:text-blue-600" href="/" preserve-scroll>Refresh</Link>
         </div>
-    </div>
+    </Layout>
 </template>
 
 <style scoped>
-.time {
-    margin: 20rem 0 0 0;
-}
 </style>
-    

@@ -6,14 +6,7 @@ defineProps({
 </script>
 
 <template>
-    <Link :class="{ 'active-link': active }">
+    <Link :class="{ 'font-bold text-blue-500 hover:text-blue-600 hover:underline': active }">
     <slot />
     </Link>
 </template>
-
-<style scoped>
-.active-link {
-    color: rgb(0, 0, 255);
-    font-weight: bold;
-}
-</style>
