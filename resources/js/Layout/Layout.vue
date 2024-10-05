@@ -8,7 +8,7 @@ import Nav from '../Shared/Nav.vue'
         <header>
             <Nav />
         </header>
-
+        <input type="text" name="" id="" value="hi ther">
         <Main class="mt-14">
             <slot />
         </Main>
