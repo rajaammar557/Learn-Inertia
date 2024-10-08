@@ -22,6 +22,9 @@ const username = computed(() => page.props.auth.user.username);
                     <NavLink href="/" :active="$page.url === '/'">Home</NavLink>
                 </li>
                 <li>
+                    <NavLink href="/users" :active="$page.component === 'Users'">Users</NavLink>
+                </li>
+                <li>
                     <NavLink href="/about" :active="$page.url === '/about'">About</NavLink>
                 </li>
                 <li>
