@@ -3,6 +3,7 @@ import { createApp, h } from 'vue'
 import { createInertiaApp, Link } from '@inertiajs/vue3'
 import NProgress from 'nprogress'
 import { router } from '@inertiajs/vue3'
+import { Head } from '@inertiajs/vue3'
 import Layout from './Layout/Layout.vue';
 
 createInertiaApp({
@@ -20,8 +21,10 @@ createInertiaApp({
     createApp({ render: () => h(App, props) })
       .use(plugin)
       .component('Link', Link)
+      .component('Head', Head)
       .mount(el)
   },
+  title: title => `Learn Inertia.Js - ${title}`,
 })
 
 router.on('start', () => NProgress.start())
