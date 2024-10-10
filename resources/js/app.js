@@ -1,9 +1,7 @@
 import './bootstrap';
 import { createApp, h } from 'vue'
-import { createInertiaApp, Link } from '@inertiajs/vue3'
+import { createInertiaApp, Link, router, Head } from '@inertiajs/vue3'
 import NProgress from 'nprogress'
-import { router } from '@inertiajs/vue3'
-import { Head } from '@inertiajs/vue3'
 import Layout from './Layout/Layout.vue';
 
 createInertiaApp({
