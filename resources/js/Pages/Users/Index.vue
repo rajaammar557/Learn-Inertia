@@ -1,5 +1,5 @@
 <script setup>
-import Pagination from "../Shared/Pagination.vue";
+import Pagination from "../../Shared/Pagination.vue";
 import { router } from '@inertiajs/vue3'
 
 import { ref, watch } from 'vue'
@@ -18,11 +18,12 @@ watch(search, value => {
 <template>
 
     <Head title="Users" />
-    <div class="flex justify-between">
+    <div class="flex justify-between mb-6">
         <h1 class="text-4xl">Users</h1>
         <input v-model="search" type="text" placeholder="Search..." class="rounded-lg px-3 border ">
     </div>
 
+    <Link class="text-blue-500 underline" href="/users/create">Create new User</Link>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg my-8">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
             <tbody>
