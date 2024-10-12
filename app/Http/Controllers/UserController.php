@@ -20,6 +20,7 @@ class UserController extends Controller
                     Request::input('search'),
                     fn($query, $search) => $query->where('name', 'like', "%$search%")
                 )
+                ->latest()
                 ->paginate(10)
                 ->withQueryString()
                 ->through(fn($user) => [
