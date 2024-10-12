@@ -2,6 +2,11 @@
 
 import { reactive } from 'vue'
 import { router } from '@inertiajs/vue3'
+
+defineProps({
+    errors: Object
+})
+
 let form = reactive({
     name: '',
     email: '',
@@ -17,7 +22,7 @@ let submit = () => {
 <template>
 
     <Head title="Create User" />
-    <h1 class="text-4xl">Create a new Users</h1>
+    <h1 class="text-4xl">Create a new User</h1>
 
     <div class="max-w-sm my-6 mx-auto border px-8 py-5 bg-white rounded-lg shadow-lg">
         <form @submit.prevent="submit">
@@ -26,7 +31,9 @@ let submit = () => {
                     name
                 </label>
                 <input class="w-full p-2 border border-gray-400 rounded" type="text" id="name" name="name"
-                    v-model="form.name" value="" required>
+                    v-model="form.name" value="">
+                <span class="text-red-500 text-sm mt-2" v-if="errors.name"
+                    v-text="errors.name"></span>
             </div>
 
             <div class="mb-6">
@@ -34,7 +41,10 @@ let submit = () => {
                     email
                 </label>
                 <input class="w-full p-2 border border-gray-400 rounded" type="email" id="email" name="email"
-                    v-model="form.email" value="" required>
+                    v-model="form.email" value="">
+                <span class="text-red-500 text-sm mt-2" v-if="errors.email"
+                    v-text="errors.email"></span>
+
             </div>
 
             <div class="mb-6">
@@ -42,7 +52,9 @@ let submit = () => {
                     password
                 </label>
                 <input class="w-full p-2 border border-gray-400 rounded" type="password" id="password" name="password"
-                    v-model="form.password" value="" required>
+                    v-model="form.password" value="">
+                <span class="text-red-500 text-sm mt-2" v-if="errors.password"
+                    v-text="errors.password"></span>
             </div>
             <div class="">
                 <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 text-md">
@@ -51,5 +63,4 @@ let submit = () => {
             </div>
         </form>
     </div>
-
 </template>
