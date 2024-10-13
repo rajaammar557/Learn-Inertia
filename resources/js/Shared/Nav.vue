@@ -6,7 +6,10 @@ import { usePage } from '@inertiajs/vue3';
 const page = usePage();
 
 const username = computed(() => page.props.auth.user.username);
-
+console.log(username);
+if (page.props.auth == null) {
+    console.log(page.props.auth);
+}
 </script>
 
 <template>
@@ -30,8 +33,17 @@ const username = computed(() => page.props.auth.user.username);
                 <li>
                     <NavLink href="/contact?foo=bar" :active="$page.component === 'Contact'">Contact</NavLink>
                 </li>
+                <li v-if="!page.props.auth">
+                    <NavLink href="/login" :active="$page.url === '/login'">Login</NavLink>
+                </li>
+                <li v-if="!page.props.auth">
+                    <NavLink href="/register" :active="$page.url === '/register'">Register</NavLink>
+                </li>
+                <li  v-if="page.props.auth">
+                    <NavLink href="/logout" method="post">Logout</NavLink>
+                </li>
             </ul>
-            <p class="text-sm font-bold text-indigo-700 ml-3">{{ username }}</p>
+            <p class="text-sm font-bold text-indigo-700 ml-3" v-if="page.props.auth" v-text="username"></p>
         </div>
     </nav>
 </template>

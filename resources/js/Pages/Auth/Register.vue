@@ -9,7 +9,7 @@ let form = useForm({
 })
 
 let submit = () => {
-    form.post('/users');
+    form.post('/register');
 }
 
 </script>

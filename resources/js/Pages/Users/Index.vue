@@ -13,7 +13,6 @@ let props = defineProps({
 let search = ref(props.filters.search)
 
 watch(search, debounce(value => {
-    console.log('faflkas')
     router.get('/users', { search: value }, { preserveState: true, replace: true })
 }, 300))
 </script>
@@ -34,7 +33,7 @@ watch(search, debounce(value => {
                         {{ user.name }}
                     </th>
                     <td class="px-6 py-4">
-                        <Link href="#" class="font-medium text-blue-600 hover:underline">Edit</Link>
+                        {{ user.email }}
                     </td>
                 </tr>
             </tbody>
